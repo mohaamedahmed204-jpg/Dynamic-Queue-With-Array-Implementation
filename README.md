@@ -63,3 +63,14 @@ RAII (Resource Acquisition Is Initialization): Dynamic memory allocated dynamica
 | Utility	| `Reverse()` |	Inverts array elements in-place using symmetric swapping. | O(N) |
 | | `PrintList()` |	Outputs array contents line-by-line to standard output (cout). | O(N) |
 
+2. Queue Operations (`clsMyQueueArr<T>`)
+
+| Method | Description | Underlying Operation |	Time Complexity |
+| :--- | :--- | :--- | :--- |
+| `push(Value)` | Enqueues a new item to the back of the queue. | `InsertAtEnd(Value)` | O(N) |
+| `pop()` | Dequeues the front item from the queue. | `DeleteFirstItem()` | O(N) |
+| `front()` | Returns the head item without removal. Returns default `T()` if empty. | `GetItem(0)` | O(1) |
+| `back()` | Returns the tail item without removal. Returns default `T()` if empty. | `GetItem(Size - 1)` | O(1) |
+| `Size()` | Returns total items currently queued. | `Size()` | O(1) |
+| `IsEmpty()` | Returns true if queue contains no elements. | `IsEmpty()` | O(1) |
+| `Clear()` | Empties all queue elements and resets memory. | `Clear()` | O(1) |
