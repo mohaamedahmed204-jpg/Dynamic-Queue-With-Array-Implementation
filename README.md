@@ -74,3 +74,63 @@ RAII (Resource Acquisition Is Initialization): Dynamic memory allocated dynamica
 | `Size()` | Returns total items currently queued. | `Size()` | O(1) |
 | `IsEmpty()` | Returns true if queue contains no elements. | `IsEmpty()` | O(1) |
 | `Clear()` | Empties all queue elements and resets memory. | `Clear()` | O(1) |
+
+
+## 💡 Key Concepts Demonstrated
+
+Manual Heap Memory Management: Direct use of standard raw pointer mechanics (`new[]` and `delete[]`) for dynamic resizing buffers.
+
+Template Metaprogramming Basics: Designing type-agnostic containers using C++ `template <class T>`.
+
+Resource Cleanup & Safety: Proper dynamic memory deallocation within class destructors to avoid dangling pointers and memory leaks.
+
+Encapsulation & Interface Abstraction: Exposing simple public interfaces while concealing complex internal memory management and temporary allocation logic (`_TempArray`).
+
+In-place Array Manipulation: Efficient two-pointer logic applied for sequence reversal operations.
+
+## 🛠️ Technologies & Tools
+
+Language: C++ (C++11 or higher recommended)
+
+Paradigm: Object-Oriented Programming (OOP) & Generic Programming
+
+Compiler Support: Compatible with GCC, Clang, and MSVC (Microsoft Visual C++)
+
+## 💻 Quick Usage Example
+
+    #include <iostream>
+    #include "clsMyQueueArr.h"
+    
+    int main() {
+        clsMyQueueArr<int> myQueue;
+    
+        // Enqueue elements
+        myQueue.push(10);
+        myQueue.push(20);
+        myQueue.push(30);
+    
+        std::cout << "Front element: " << myQueue.front() << std::endl; // Output: 10
+        std::cout << "Back element: " << myQueue.back() << std::endl;   // Output: 30
+    
+        // Dequeue element
+        myQueue.pop();
+        std::cout << "Front element after pop: " << myQueue.front() << std::endl; // Output: 20
+    
+        // Print all remaining items
+        std::cout << "Queue contents: ";
+        myQueue.Print();
+    
+        return 0;
+    }
+
+## Topic/Tags:
+
+`cpp` `data-structures` `dynamic-array` `queue` `templates` `oop` `memory-management` `cpp-templates`
+
+## 👨‍🏫 Instructor
+
+Dr. Mohammed Abu-Hadhoud
+Founder & Instructor — Programming Advices
+
+Programming Advices
+https://programmingadvices.com
